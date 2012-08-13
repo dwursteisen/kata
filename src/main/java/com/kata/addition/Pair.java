@@ -33,13 +33,12 @@ public class Pair {
 
     @Override
     public int hashCode() {
-        int result = number1;
-        result = 31 * result + number2;
+        int result = number1 * number1 + number2 * number2;
         return result;
     }
 
     @Override
     public String toString() {
-        return "[ "+number1+" - "+number2+" ]";
+        return "[ " + number1 + " - " + number2 + " ]";
     }
 }
