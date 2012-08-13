@@ -15,7 +15,10 @@ public class LeCompteEstBonBenchmark extends SimpleBenchmark {
 
 
     private static final int EXPECTED = 10;
-    private static final List<Integer> elts = Arrays.asList(10, 2, 5, 8, 7, 3, 1);
+    private static final List<Integer> elts = Arrays.asList(10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8,
+            7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7,
+            3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10,
+            2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1);
 
     public void timeLeCompteEstBonNaivement(int reps) {
         LeCompteEstBon impl = new LeCompteEstBonNaivement();
