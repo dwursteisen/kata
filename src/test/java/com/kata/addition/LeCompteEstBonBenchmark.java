@@ -1,10 +1,13 @@
 package com.kata.addition;
 
+import com.google.caliper.Param;
 import com.google.caliper.Runner;
 import com.google.caliper.SimpleBenchmark;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 /**
  * User: Wursteisen David
@@ -15,10 +18,20 @@ public class LeCompteEstBonBenchmark extends SimpleBenchmark {
 
 
     private static final int EXPECTED = 10;
-    private static final List<Integer> elts = Arrays.asList(10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8,
-            7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7,
-            3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10,
-            2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1, 10, 2, 5, 8, 7, 3, 1);
+    private static final List<Integer> elts = new ArrayList<Integer>();
+
+    @Param
+    private int size = 20;
+
+    private final Random random = new Random(new Date().getTime());
+
+    @Override
+    protected void setUp() throws Exception {
+        elts.clear();
+        for (int i = 0; i < size; i++) {
+            elts.add(random.nextInt(100));
+        }
+    }
 
     public void timeLeCompteEstBonNaivement(int reps) {
         LeCompteEstBon impl = new LeCompteEstBonNaivement();
