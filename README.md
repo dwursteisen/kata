@@ -11,5 +11,5 @@ Le but de la manoeuvre est de trouver une liste de 2 nombres distinct dont la so
     attendu 6; liste de nombre : 5, 2, 3, 4 ; résultat attendu : (2, 4)
 
 ----
-Pour éxecuter le code : lancer le main de la class ‘LeCompteEstBonBenchmark‘
-(un build ‘maven‘ préalable sera nécessaire pour télécharger les dépendences)
+Pour éxecuter le code : lancer le main de la class 'LeCompteEstBonBenchmark'
+(un build 'maven' préalable sera nécessaire pour télécharger les dépendences)
