@@ -11,16 +11,13 @@ import java.util.List;
 import static org.fest.assertions.Assertions.assertThat;
 
 @RunWith(Theories.class)
-public class LecompteEstBonTest {
+public class LeCompteEstBonTest {
 
     @DataPoint
     public static LeCompteEstBon bruteForce = new LeCompteEstBonNaivement();
 
     @DataPoint
     public static LeCompteEstBon subForce = new LeCompteEstBonSoustraction();
-
-    @DataPoint
-    public static LeCompteEstBon mapReduce = new LeCompteEstBonMapReduce();
 
     @Theory
     public void normalementLeCompteEstBon(LeCompteEstBon impl) {
@@ -38,5 +35,15 @@ public class LecompteEstBonTest {
 
         pairs = impl.leCompteEstBon(elts, 2);
         assertThat(pairs).isEmpty();
+
+
+        elts = Arrays.asList(0, 1, 2, 3, 4);
+        pairs = impl.leCompteEstBon(elts, 1);
+        assertThat(pairs).containsExactly(new Pair(0, 1));
+
+
+        elts = Arrays.asList(0, 1, 2, 3, 4, 2);
+        pairs = impl.leCompteEstBon(elts, 4);
+        assertThat(pairs).containsExactly(new Pair(0, 4), new Pair(3, 1), new Pair(2, 2));
     }
 }

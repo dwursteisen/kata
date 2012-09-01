@@ -20,8 +20,8 @@ public class LeCompteEstBonBenchmark extends SimpleBenchmark {
     private static final int EXPECTED = 10;
     private static final List<Integer> elts = new ArrayList<Integer>();
 
-    @Param
-    private int size = 20;
+    @Param(value = {"2000"})
+    private int size;
 
     private final Random random = new Random(new Date().getTime());
 
@@ -42,13 +42,6 @@ public class LeCompteEstBonBenchmark extends SimpleBenchmark {
 
     public void timeLeCompteEstBonSoustraction(int reps) {
         LeCompteEstBon impl = new LeCompteEstBonSoustraction();
-        for (int i = 0; i < reps; i++) {
-            List<Pair> result = impl.leCompteEstBon(elts, EXPECTED);
-        }
-    }
-
-    public void timeLeCompteEstBonMapReduce(int reps) {
-        LeCompteEstBon impl = new LeCompteEstBonMapReduce();
         for (int i = 0; i < reps; i++) {
             List<Pair> result = impl.leCompteEstBon(elts, EXPECTED);
         }
